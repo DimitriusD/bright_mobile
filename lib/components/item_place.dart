@@ -16,26 +16,29 @@ class ItemPlace extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Expanded(
-          child: Container(
-            padding: EdgeInsets.all(14),
+    return GestureDetector(
+      onTap: press,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.all(14),
 //          height: 180,
 //          width: 160,
-            decoration: BoxDecoration(
-              color: Colors.blue,
-              borderRadius: BorderRadius.circular(16),
-            ),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(16),
+              ),
 //            child: Image.asset("image"),
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
-          child: Text("Name"),
-        )
-      ],
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
+            child: Text("Name"),
+          )
+        ],
+      ),
     );
   }
 }

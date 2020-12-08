@@ -1,3 +1,4 @@
+import 'package:bright_mobile/details_screen.dart';
 import 'package:bright_mobile/model/Place.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -33,7 +34,16 @@ class Body extends StatelessWidget {
                     mainAxisSpacing: 8,
                     crossAxisSpacing: 8,
                     childAspectRatio: 0.75),
-                itemBuilder: (context, index) => ItemPlace(place: places[index],)),
+                itemBuilder: (context, index) => ItemPlace(
+                  place: places[index],
+                  press: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DetailScreen(
+                            place: places[index],)
+                      )),
+                )
+            ),
           ),
         ),
       ],
