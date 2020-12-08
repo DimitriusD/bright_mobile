@@ -1,4 +1,4 @@
-import 'package:bright_mobile/detail_screen_body.dart';
+import 'package:bright_mobile/screens/details/components/body.dart';
 import 'package:bright_mobile/model/Place.dart';
 import 'package:flutter/material.dart';
 
