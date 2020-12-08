@@ -1,3 +1,4 @@
+import 'package:bright_mobile/components/body.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -47,7 +48,7 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      body:  _buildBody(),
+      body:  Body(),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         onTap: (index) => _selectTab(TabItem.values[index]),
