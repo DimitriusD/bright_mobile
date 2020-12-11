@@ -21,13 +21,6 @@ class DetailScreenBody extends StatelessWidget {
             height: size.height,
             child: Stack(
               children: <Widget>[
-                Container(
-                  margin: EdgeInsets.only(top: size.height * 0.3),
-                  height: 500,
-                  decoration: BoxDecoration(
-                    color: Colors.white
-                  ),
-                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
                   child: Column(
@@ -40,21 +33,16 @@ class DetailScreenBody extends StatelessWidget {
                             .headline4
                             .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
                       ),
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.brown,
-                            borderRadius: BorderRadius.circular(16),
-                          )
-                        ),
-                      )
-
+                    Container(
+                          child: Image.asset('assets/images/come.jpg',
+                          fit: BoxFit.fill,)
+                    ),
+                      Text("Кафе Come and Stay находится в центральной части Киева, поэтому здесь всегда много посетителей. Кафе довольно небольшое, при этом оно очень светлое и уютное. Возле барной стойки можно купить не только еду, но и интересные сувениры и открытки. ")
                     ],
                   ),
                 )
               ],
-            ),
-
+            )
           )
         ],
       ),
@@ -62,29 +50,3 @@ class DetailScreenBody extends StatelessWidget {
   }
 }
 
-
-//
-//Padding(
-//padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-//child: Column(
-//crossAxisAlignment: CrossAxisAlignment.start,
-//children: <Widget>[
-//Text(
-//"Come and Stay",
-//style: Theme.of(context)
-//.textTheme
-//    .headline4
-//    .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
-//),
-//Expanded(
-//child: Container(
-//decoration: BoxDecoration(
-//color: Colors.brown,
-//borderRadius: BorderRadius.circular(16),
-//),
-////            child: Image.asset("image"),
-//),
-//)
-//],
-//),
-//),

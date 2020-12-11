@@ -1,3 +1,5 @@
+import 'package:bright_mobile/model/Place.dart';
+import 'package:bright_mobile/network/PlacesApiService.dart';
 import 'package:bright_mobile/screens/places/components/body.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +17,12 @@ class PlacesScreen extends StatefulWidget {
 
 class _PlacesScreenState extends State<PlacesScreen> {
 
+  final PlaceApiService apiService = new PlaceApiService();
+
+  Future<List<Place>> places;
+
   TabItem currentTabItem = TabItem.Place;
+
 
   void _selectTab(TabItem tabItem){
     setState(() {
@@ -38,7 +45,16 @@ class _PlacesScreenState extends State<PlacesScreen> {
                 .copyWith(fontWeight: FontWeight.bold),),
         ),
       ),
-      body:  Body(),
+      body: FutureBuilder<List<Place>>(
+        future: places,
+        builder: (context, snapshot){
+          return snapshot.hasData
+              ?  Body(places: snapshot.data)
+              : Center(child: CircularProgressIndicator());
+        },
+      ),
+
+//      Body(apiService.fetchPlaces()),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         onTap: (index) => _selectTab(TabItem.values[index]),
@@ -68,5 +84,11 @@ class _PlacesScreenState extends State<PlacesScreen> {
 
   Color _colorTabMatching(TabItem item) {
     return currentTabItem == item ? Colors.blue: Colors.grey;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    places = apiService.fetchPlaces();
   }
 }

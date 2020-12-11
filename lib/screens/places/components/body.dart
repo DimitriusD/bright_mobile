@@ -8,6 +8,10 @@ import 'categories.dart';
 import 'item_place.dart';
 
 class Body extends StatelessWidget {
+  final List<Place> places;
+
+  const Body({Key key, this.places}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {

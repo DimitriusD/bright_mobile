@@ -1,22 +1,21 @@
 import 'dart:typed_data';
 
 import 'package:bright_mobile/model/BaseModel.dart';
-import 'package:flutter/material.dart';
 
-class Place extends BaseModel {
+class Event extends BaseModel {
 
-  Place({int id, String name, String location, String description, Uint8List images})
+  Event({int id, String name, String location, String description, Uint8List images})
       : super(id: id, name: name, location: location, description: description, images: images);
 
-
-  factory Place.fromJson(Map<String, dynamic> json){
-    return Place(
+  factory Event.fromJson(Map<String, dynamic> json){
+    return Event(
         id: json['id'],
         name: json['name'],
         location: json['location'],
         description: json['description'],
         images: json['images']);
   }
+
 }
 
 
