@@ -10,7 +10,7 @@ class BaseModel{
 
   final String description;
 
-  final Uint8List images;
+  final List<Uint8List> images;
 
   BaseModel({this.id, this.name, this.location, this.description, this.images});
 

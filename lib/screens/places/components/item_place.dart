@@ -28,12 +28,12 @@ class ItemPlace extends StatelessWidget {
                 color: Colors.blue,
                 borderRadius: BorderRadius.circular(16),
               ),
-//            child: Image.asset("image"),
+                child: Image.memory(place.images[0]),
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
-            child: Text("Name"),
+            child: Text(place.name),
           )
         ],
       ),
