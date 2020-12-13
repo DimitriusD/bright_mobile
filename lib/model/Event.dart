@@ -8,19 +8,16 @@ class Event extends BaseModel {
       : super(id: id, name: name, location: location, description: description, images: images);
 
   factory Event.fromJson(Map<String, dynamic> json){
-    List<Uint8List> imageConverter(json){
-      List<Uint8List> images = new List<Uint8List>();
-
-      return images;
-    }
 
     return Event(
         id: json['id'],
         name: json['name'],
         location: json['location'],
         description: json['description'],
-        images: imageConverter(json['images']));
+        images: BaseModel.imagesConverter(json['images']));
   }
+
 }
+
 
 

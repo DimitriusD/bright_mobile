@@ -20,7 +20,7 @@ class DetailScreen extends StatelessWidget {
           icon: Icon(
             Icons.arrow_back,
             color: Colors.white),
-          onPressed: () => Navigator.pop(context),),
+          onPressed: () => Navigator.pop(context)),
       ),
       body: DetailScreenBody(place: place,),
     );

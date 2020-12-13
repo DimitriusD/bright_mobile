@@ -89,6 +89,6 @@ class _PlacesScreenState extends State<PlacesScreen> {
   @override
   void initState() {
     super.initState();
-    places = apiService.fetchPlaces();
+    places = apiService.fetch();
   }
 }

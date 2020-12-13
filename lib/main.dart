@@ -2,6 +2,7 @@ import 'package:bright_mobile/screens/places/components/body.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/places/places_screen.dart';
+import 'screens/profile/user_profile_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,17 +15,26 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'Bright',
-
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-
+        scaffoldBackgroundColor: Colors.white,
+        primaryColor: Colors.black,
+        iconTheme: IconThemeData(
+            color: Colors.white
+        ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-
-      home: PlacesScreen(),
+      home: UserProfileScreen(),
     );
   }
 }
+
+
+//theme: ThemeData(
+//primaryColor: Colors.black45,
+//iconTheme: IconThemeData(
+//color: Colors.white
+//)
+//),
 
 
 
