@@ -8,9 +8,14 @@ import 'AbstractApiService.dart';
 class EventApiService extends AbstractApiService<Event>{
 
   @override
-  Future<Event> create(Event object) {
-    // TODO: implement create
-    throw UnimplementedError();
+  Future<Event> create(Event object) async{
+    var response = await post(AbstractApiService.baseUrl + "/events",
+        body: jsonEncode(object));
+    if(response.statusCode == 200){
+      return Event.fromJson(jsonDecode(response.body));
+    }else {
+      throw Exception('Failed to load');
+    }
   }
 
   @override

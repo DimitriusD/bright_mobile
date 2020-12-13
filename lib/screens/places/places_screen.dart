@@ -21,15 +21,6 @@ class _PlacesScreenState extends State<PlacesScreen> {
 
   Future<List<Place>> places;
 
-  TabItem currentTabItem = TabItem.Place;
-
-
-  void _selectTab(TabItem tabItem){
-    setState(() {
-      currentTabItem = tabItem;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
 
@@ -53,37 +44,7 @@ class _PlacesScreenState extends State<PlacesScreen> {
               : Center(child: CircularProgressIndicator());
         },
       ),
-
-//      Body(apiService.fetchPlaces()),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        onTap: (index) => _selectTab(TabItem.values[index]),
-        items: [
-          BottomNavigationBarItem(
-            icon: new Icon(
-                Icons.layers,
-                color: _colorTabMatching(TabItem.Place)),
-            label: 'Place',
-          ),
-          BottomNavigationBarItem(
-            icon: new Icon(
-                Icons.layers,
-                color: _colorTabMatching(TabItem.Event)),
-            label: 'Event',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-                Icons.layers,
-                color: _colorTabMatching(TabItem.Entertainment)),
-            label: 'Entertainment',
-          )
-        ],
-      ),
     );
-  }
-
-  Color _colorTabMatching(TabItem item) {
-    return currentTabItem == item ? Colors.blue: Colors.grey;
   }
 
   @override

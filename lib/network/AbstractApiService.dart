@@ -6,5 +6,4 @@ abstract class AbstractApiService<T> {
 
   Future<T> create(T object);
 
-
 }
