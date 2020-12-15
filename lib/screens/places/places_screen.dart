@@ -26,15 +26,14 @@ class _PlacesScreenState extends State<PlacesScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title:  Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-          child: Text(
-            "Places",
-            style: Theme.of(context)
-                .textTheme
-                .headline5
-                .copyWith(fontWeight: FontWeight.bold),),
-        ),
+        backgroundColor: Colors.black54,
+        title: Text(
+            "Places"
+//            style: Theme.of(context)
+//                .textTheme
+//                .headline5
+//                .copyWith(fontWeight: FontWeight.w500)
+          ),
       ),
       body: FutureBuilder<List<Place>>(
         future: places,

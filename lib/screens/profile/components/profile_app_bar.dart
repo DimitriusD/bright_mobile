@@ -20,7 +20,7 @@ class ProfileAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).primaryColor,
+      color:  Colors.black54,
       height: height,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

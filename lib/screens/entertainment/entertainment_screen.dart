@@ -8,6 +8,13 @@ class EntertainmentScreen extends StatefulWidget {
 class _EntertainmentScreenState extends State<EntertainmentScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black54,
+        title: Text(
+            "Entertainment"
+        ),
+      ),
+    );
   }
 }

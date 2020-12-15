@@ -8,6 +8,13 @@ class EventsScreen extends StatefulWidget {
 class _EventsScreenState extends State<EventsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black54,
+        title: Text(
+            "Events"
+        ),
+      ),
+    );
   }
 }
