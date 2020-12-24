@@ -95,7 +95,22 @@ class LoginScreen extends StatelessWidget {
                             shape: StadiumBorder(),
                           ),
                         ),
-                      )
+                      ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Center(
+                        child: MaterialButton(
+                          color: Colors.black38,
+                          onPressed: (){
+                            Navigator.pushNamed(context, "/register");
+                          },
+                          child: Text(
+                              "CREATE NEW ACCOUNT"
+                          ),
+                          shape: StadiumBorder(),
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
