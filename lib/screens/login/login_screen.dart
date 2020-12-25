@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:bright_mobile/constants.dart';
+import 'package:bright_mobile/screens/register/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -102,7 +103,7 @@ class LoginScreen extends StatelessWidget {
                         child: MaterialButton(
                           color: Colors.black38,
                           onPressed: (){
-                            Navigator.pushNamed(context, "/register");
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterScreen()));
                           },
                           child: Text(
                               "CREATE NEW ACCOUNT"
