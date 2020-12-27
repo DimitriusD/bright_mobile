@@ -1,5 +1,6 @@
 import 'dart:convert';
-import 'package:bright_mobile/model/Place.dart';
+
+import 'package:bright_mobile/old_version/model/Place.dart';
 import 'package:http/http.dart';
 
 import 'AbstractApiService.dart';

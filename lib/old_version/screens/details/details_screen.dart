@@ -1,5 +1,5 @@
-import 'package:bright_mobile/screens/details/components/body.dart';
-import 'package:bright_mobile/model/Place.dart';
+import 'package:bright_mobile/old_version/model/Place.dart';
+import 'package:bright_mobile/old_version/screens/details/components/body.dart';
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:bright_mobile/model/UserProfile.dart';
+import 'package:bright_mobile/old_version/model/UserProfile.dart';
 import 'package:http/http.dart';
 
 import 'AbstractApiService.dart';

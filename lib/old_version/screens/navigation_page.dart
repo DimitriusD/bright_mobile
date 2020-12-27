@@ -1,4 +1,4 @@
-import 'package:bright_mobile/screens/profile/user_profile_screen.dart';
+import 'package:bright_mobile/old_version/screens/profile/user_profile_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'entertainment/entertainment_screen.dart';

@@ -1,9 +1,10 @@
-import 'package:bright_mobile/model/Place.dart';
-import 'package:bright_mobile/network/PlacesApiService.dart';
-import 'package:bright_mobile/screens/places/components/body.dart';
+import 'package:bright_mobile/old_version/model/Place.dart';
+import 'package:bright_mobile/old_version/network/PlacesApiService.dart';
+import 'package:bright_mobile/old_version/screens/places/components/body.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
+import '../../../constants.dart';
+
 
 enum TabItem{Place, Event, Entertainment}
 

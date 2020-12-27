@@ -1,4 +1,4 @@
-import 'package:bright_mobile/services/ProfileService.dart';
+import 'package:bright_mobile/old_version/services/ProfileService.dart';
 import 'package:flutter/material.dart';
 
 import '../navigation_page.dart';

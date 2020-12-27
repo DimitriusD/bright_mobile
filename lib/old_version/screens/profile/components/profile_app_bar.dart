@@ -1,5 +1,5 @@
 import 'package:bright_mobile/constants.dart';
-import 'package:bright_mobile/screens/settings/settings_screen.dart';
+import 'package:bright_mobile/old_version/screens/settings/settings_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProfileAppBar extends StatelessWidget with PreferredSizeWidget {

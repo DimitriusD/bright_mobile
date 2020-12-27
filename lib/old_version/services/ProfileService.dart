@@ -1,6 +1,6 @@
 
-import 'package:bright_mobile/model/UserProfile.dart';
-import 'package:bright_mobile/network/ProfileApiService.dart';
+import 'package:bright_mobile/old_version/model/UserProfile.dart';
+import 'package:bright_mobile/old_version/network/ProfileApiService.dart';
 
 class ProfileService{
 

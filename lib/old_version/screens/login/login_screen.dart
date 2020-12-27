@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:bright_mobile/constants.dart';
-import 'package:bright_mobile/screens/register/register_screen.dart';
+import 'package:bright_mobile/old_version/screens/register/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'dart:typed_data';
-
-import 'package:bright_mobile/model/BaseModel.dart';
 import 'dart:convert';
+
+import 'BaseModel.dart';
 
 class Place extends BaseModel {
 
