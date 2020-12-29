@@ -1,4 +1,4 @@
-import 'package:bright_mobile/old_version/model/Place.dart';
+import 'package:bright_mobile/model/Place.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../constants.dart';

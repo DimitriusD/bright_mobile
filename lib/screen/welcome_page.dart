@@ -1,4 +1,6 @@
 import 'package:bright_mobile/constants.dart';
+import 'package:bright_mobile/screen/login_page.dart';
+import 'package:bright_mobile/screen/register_page.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -45,7 +47,9 @@ class WelcomePage extends StatelessWidget {
                       width: size.width * 0.32,
                       child: MaterialButton(
                           color: Colors.white,
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                            },
                           child: Text(
                               "LOGIN"
                           ),
@@ -61,7 +65,9 @@ class WelcomePage extends StatelessWidget {
                       width: size.width * 0.32,
                       child: MaterialButton(
                           color: Colors.white,
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
+                          },
                           child: Text(
                               "REGISTER"
                           ),

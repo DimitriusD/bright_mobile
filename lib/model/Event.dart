@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 
 
-import 'package:bright_mobile/old_version/model/BaseModel.dart';
+import 'package:bright_mobile/model/BaseModel.dart';
 
 class Event extends BaseModel {
 

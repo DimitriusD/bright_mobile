@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:bright_mobile/old_version/model/Event.dart';
+import 'package:bright_mobile/model/Event.dart';
 
 import 'package:http/http.dart';
 

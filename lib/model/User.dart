@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-class UserProfile {
+class User {
 
   final int id;
 
@@ -14,11 +14,11 @@ class UserProfile {
 
   //final List<Uint8List> images;
 
-  UserProfile({this.id, this.name, this.surname, this.phone, this.pass});
+  User({this.id, this.name, this.surname, this.phone, this.pass});
 
 
-  factory UserProfile.fromJson(Map<String, dynamic> json){
-    return UserProfile(
+  factory User.fromJson(Map<String, dynamic> json){
+    return User(
         id: json['id'],
         name: json['name'],
         surname: json['surname'],
