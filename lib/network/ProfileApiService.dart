@@ -10,7 +10,7 @@ class ProfileApiService extends AbstractApiService<User>{
 
   @override
   Future<User> create(User object) async {
-    var response = await post(AbstractApiService.baseUrl + "/user",
+    var response = await post(AbstractApiService.baseUrl + "/user/registration",
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
@@ -42,7 +42,7 @@ class ProfileApiService extends AbstractApiService<User>{
   }
 
   @override
-  Future<List<User>>fetch() async {
+  Future<List<User>>fetch(String accessToken) async {
     final response = await post(AbstractApiService.baseUrl + "/user");
     if(response.statusCode == 200){
       List<dynamic> body = jsonDecode(response.body);
@@ -64,6 +64,18 @@ class ProfileApiService extends AbstractApiService<User>{
     } else{
       throw Exception('Failed to load');
     }
+  }
+
+  @override
+  Future<User> delete() {
+    // TODO: implement delete
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<User> update() {
+    // TODO: implement update
+    throw UnimplementedError();
   }
 
 }

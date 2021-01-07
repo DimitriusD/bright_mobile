@@ -1,6 +1,7 @@
 import 'package:bright_mobile/model/Place.dart';
 import 'package:bright_mobile/network/PlacesApiService.dart';
 import 'package:bright_mobile/old_version/screens/places/components/body.dart';
+import 'package:bright_mobile/services/PlaceService.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
@@ -18,7 +19,7 @@ class PlacesScreen extends StatefulWidget {
 
 class _PlacesScreenState extends State<PlacesScreen> {
 
-  final PlaceApiService apiService = new PlaceApiService();
+  final PlaceService apiService = new PlaceService();
 
   Future<List<Place>> places;
 
@@ -51,6 +52,6 @@ class _PlacesScreenState extends State<PlacesScreen> {
   @override
   void initState() {
     super.initState();
-    places = apiService.fetch();
+    places = apiService.fetchPlaces();
   }
 }

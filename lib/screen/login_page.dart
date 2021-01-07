@@ -1,7 +1,11 @@
 import 'package:bright_mobile/constants.dart';
+import 'package:bright_mobile/model/User.dart';
+import 'package:bright_mobile/services/ProfileService.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
+
+  var profileService = new ProfileService();
 
   TextEditingController passwordController = new TextEditingController();
   TextEditingController phoneController = new TextEditingController();
@@ -86,7 +90,12 @@ class LoginPage extends StatelessWidget {
                   child: MaterialButton(
                       color: Colors.white,
                       onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                        Future<User> login = profileService.login(
+                            phoneController.value.text,
+                            passwordController.value.text);
+                        if(login != null){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                        }
                       },
                       child: Text(
                           "LOGIN"

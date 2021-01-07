@@ -21,8 +21,11 @@ class PlaceApiService extends AbstractApiService<Place>{
   }
 
   @override
-  Future<List<Place>> fetch() async {
-    final response = await get(AbstractApiService.baseUrl + "/places");
+  Future<List<Place>> fetch(String accessToken) async {
+    final response = await get(AbstractApiService.baseUrl + "/places",
+      headers: <String, String>{
+        'Authorization': 'Basic ' + accessToken,
+      },);
     if(response.statusCode == 200){
       List<dynamic> body = jsonDecode(response.body);
       List<Place> places =  body.map((dynamic item) => Place.fromJson(item)).toList();
@@ -30,6 +33,18 @@ class PlaceApiService extends AbstractApiService<Place>{
     } else{
       throw Exception('Failed to load');
     }
+  }
+
+  @override
+  Future<Place> delete() {
+    // TODO: implement delete
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Place> update() {
+    // TODO: implement update
+    throw UnimplementedError();
   }
 
 }

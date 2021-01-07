@@ -20,7 +20,7 @@ class EventApiService extends AbstractApiService<Event>{
   }
 
   @override
-  Future<List<Event>> fetch() async {
+  Future<List<Event>> fetch(String accessToken) async {
     final response = await get(AbstractApiService.baseUrl + "/events");
     if(response.statusCode == 200){
       List<dynamic> body = jsonDecode(response.body);
@@ -29,5 +29,17 @@ class EventApiService extends AbstractApiService<Event>{
     } else{
       throw Exception('Failed to load');
     }
+  }
+
+  @override
+  Future<Event> delete() {
+    // TODO: implement delete
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Event> update() {
+    // TODO: implement update
+    throw UnimplementedError();
   }
 }

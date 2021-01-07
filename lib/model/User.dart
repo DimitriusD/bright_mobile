@@ -4,9 +4,11 @@ class User {
 
   final int id;
 
-  final String name;
+  final String username;
 
   final String surname;
+
+  final String age;
 
   final String phone;
 
@@ -14,22 +16,25 @@ class User {
 
   //final List<Uint8List> images;
 
-  User({this.id, this.name, this.surname, this.phone, this.pass});
+  User({this.id, this.username, this.surname, this.age ,this.phone, this.pass});
 
 
   factory User.fromJson(Map<String, dynamic> json){
     return User(
         id: json['id'],
-        name: json['name'],
+        username: json['username'],
         surname: json['surname'],
         phone: json['phone'],
+        age: json['age'],
         pass: json['pass']);
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'name': name,
+      'id': id,
+      'username': username,
       'surname': surname,
+      'age': age,
       'phone': phone,
       'pass': pass,
     };

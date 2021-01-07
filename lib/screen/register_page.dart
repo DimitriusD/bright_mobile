@@ -1,6 +1,7 @@
 import 'package:bright_mobile/old_version/screens/navigation_page.dart';
 import 'package:bright_mobile/services/ProfileService.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterPage extends StatelessWidget {
 
@@ -19,7 +20,7 @@ class RegisterPage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 80),
+        padding: const EdgeInsets.symmetric(vertical: 55),
         child: Column(
           children: [
             Padding(
@@ -54,7 +55,6 @@ class RegisterPage extends StatelessWidget {
                   child: TextField(
                     controller: surnameController,
                     style: TextStyle(color: Colors.white),
-                    obscureText: true,
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Surname"
@@ -75,7 +75,6 @@ class RegisterPage extends StatelessWidget {
                   child: TextField(
                     controller: ageController,
                     style: TextStyle(color: Colors.white),
-                    obscureText: true,
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Age"
@@ -96,7 +95,6 @@ class RegisterPage extends StatelessWidget {
                   child: TextField(
                     controller: phoneController,
                     style: TextStyle(color: Colors.white),
-                    obscureText: true,
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Phone"
@@ -117,7 +115,6 @@ class RegisterPage extends StatelessWidget {
                   child: TextField(
                     controller: emailController,
                     style: TextStyle(color: Colors.white),
-                    obscureText: true,
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Email"
@@ -160,6 +157,9 @@ class RegisterPage extends StatelessWidget {
                         passwordController.value.text
                     );
                     registerNewUser.then((value) => {
+
+                      _save(value.username, value.pass),
+
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -181,4 +181,13 @@ class RegisterPage extends StatelessWidget {
       )
     );
   }
+
+  _save(String name, String pass) async {
+    final prefs = await SharedPreferences.getInstance();
+    final keyName = 'name';
+    final keyPass = 'pass';
+    prefs.setString(keyName, name);
+    prefs.setString(keyPass, pass);
+  }
+
 }
