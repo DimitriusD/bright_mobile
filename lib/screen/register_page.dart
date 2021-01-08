@@ -1,4 +1,5 @@
 import 'package:bright_mobile/old_version/screens/navigation_page.dart';
+import 'package:bright_mobile/repositories/SharedPreferenceRepository.dart';
 import 'package:bright_mobile/services/ProfileService.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -159,11 +160,10 @@ class RegisterPage extends StatelessWidget {
                     registerNewUser.then((value) => {
 
                       _save(value.username, value.pass),
-
                       Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => NavigationPage()
+                          MaterialPageRoute(                              builder: (context) => NavigationPage()
+
                           )
                       )
                     });
@@ -183,11 +183,8 @@ class RegisterPage extends StatelessWidget {
   }
 
   _save(String name, String pass) async {
-    final prefs = await SharedPreferences.getInstance();
-    final keyName = 'name';
-    final keyPass = 'pass';
-    prefs.setString(keyName, name);
-    prefs.setString(keyPass, pass);
+    SharedPreferenceRepository.putString('name', name);
+    SharedPreferenceRepository.putString('pass', pass);
   }
 
 }
