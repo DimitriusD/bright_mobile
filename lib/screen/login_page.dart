@@ -1,5 +1,7 @@
 import 'package:bright_mobile/constants.dart';
 import 'package:bright_mobile/model/User.dart';
+import 'package:bright_mobile/old_version/screens/navigation_page.dart';
+import 'package:bright_mobile/repositories/SharedPreferenceRepository.dart';
 import 'package:bright_mobile/services/ProfileService.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +10,7 @@ class LoginPage extends StatelessWidget {
   var profileService = new ProfileService();
 
   TextEditingController passwordController = new TextEditingController();
-  TextEditingController phoneController = new TextEditingController();
+  TextEditingController usernameController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -44,12 +46,12 @@ class LoginPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 5),
                       child: TextField(
-                        controller: phoneController,
+                        controller: usernameController,
                         style: TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                             border: InputBorder.none,
                             prefixIcon: Icon(
-                              Icons.phone,
+                              Icons.person,
                               color: Colors.white,
                             ),
                             hintText: "Phone"
@@ -91,10 +93,15 @@ class LoginPage extends StatelessWidget {
                       color: Colors.white,
                       onPressed: (){
                         Future<User> login = profileService.login(
-                            phoneController.value.text,
+                            usernameController.value.text,
                             passwordController.value.text);
                         if(login != null){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                          login.then((value) => {
+                            if(value.id != null){
+                              _save(value.phone, value.password),
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => NavigationPage()))
+                            }
+                          });
                         }
                       },
                       child: Text(
@@ -113,4 +120,10 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
+
+  _save(String name, String pass) async {
+    SharedPreferenceRepository.putString('phone', name);
+    SharedPreferenceRepository.putString('pass', pass);
+  }
+
 }

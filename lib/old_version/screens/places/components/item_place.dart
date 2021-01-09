@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:bright_mobile/model/Place.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +30,9 @@ class ItemPlace extends StatelessWidget {
                 color: Colors.blue,
                 borderRadius: BorderRadius.circular(16),
               ),
-                child: Image.memory(place.images[0]),
+                child: place.images.isNotEmpty ? Image.memory(place.images[0]) : Image(
+                  image: AssetImage('assets/images/not-found.jpg'),
+                )  ,
             ),
           ),
           Padding(
@@ -40,3 +44,5 @@ class ItemPlace extends StatelessWidget {
     );
   }
 }
+
+

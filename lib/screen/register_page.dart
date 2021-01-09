@@ -158,8 +158,7 @@ class RegisterPage extends StatelessWidget {
                         passwordController.value.text
                     );
                     registerNewUser.then((value) => {
-
-                      _save(value.username, value.pass),
+                      _save(value.phone, value.password),
                       Navigator.push(
                           context,
                           MaterialPageRoute(                              builder: (context) => NavigationPage()
@@ -183,7 +182,7 @@ class RegisterPage extends StatelessWidget {
   }
 
   _save(String name, String pass) async {
-    SharedPreferenceRepository.putString('name', name);
+    SharedPreferenceRepository.putString('phone', name);
     SharedPreferenceRepository.putString('pass', pass);
   }
 

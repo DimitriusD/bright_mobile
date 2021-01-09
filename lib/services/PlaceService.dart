@@ -16,7 +16,7 @@ class PlaceService {
 
   String _read()  {
 
-    var name = SharedPreferenceRepository.getString("name");
+    var name = SharedPreferenceRepository.getString("phone");
     var pass = SharedPreferenceRepository.getString("pass");
     Codec<String, String> stringToBase64 = utf8.fuse(base64);
     return stringToBase64.encode(name + ":" + pass);

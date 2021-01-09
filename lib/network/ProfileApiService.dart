@@ -29,11 +29,11 @@ class ProfileApiService extends AbstractApiService<User>{
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
-        body: {
+        body: jsonEncode(<String, String>{
           "phone": phone,
-          "pass": pass,
-
-        });
+          "password": pass,
+        })
+    );
     if(response.statusCode == 200){
       return User.fromJson(jsonDecode(response.body));
     }else {
