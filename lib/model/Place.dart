@@ -5,8 +5,8 @@ import 'BaseModel.dart';
 
 class Place extends BaseModel {
 
-  Place({int id, String name, String location, String description, List<Uint8List> images})
-      : super(id: id, name: name, location: location, description: description, images: images);
+  Place({int id, String name, String location, String description, String phone, List<Uint8List> images})
+      : super(id: id, name: name, location: location, description: description, phone: phone, images: images);
 
   factory Place.fromJson(Map<String, dynamic> json){
     return Place(
@@ -14,6 +14,7 @@ class Place extends BaseModel {
         name: json['name'],
         location: json['location'],
         description: json['description'],
+        phone: json['phone'],
         images: BaseModel.imagesConverter(json['images']));
   }
 

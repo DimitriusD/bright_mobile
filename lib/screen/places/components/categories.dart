@@ -1,6 +1,6 @@
+import 'package:bright_mobile/constants.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../constants.dart';
 
 class PaceCategories extends StatefulWidget {
   @override
@@ -41,7 +41,7 @@ class _PaceCategoriesState extends State<PaceCategories> {
                 categories[selectedIndex],
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.white38
+                    color: Colors.red
                 )
                 ,
               ),
@@ -49,7 +49,7 @@ class _PaceCategoriesState extends State<PaceCategories> {
                 margin: EdgeInsets.only(top: 1),
                 height: 2,
                 width: 30,
-                color: Colors.black,
+                color: Colors.red,
               )
             ],
           ),

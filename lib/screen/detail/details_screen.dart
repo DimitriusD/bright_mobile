@@ -1,6 +1,6 @@
 import 'package:bright_mobile/model/Place.dart';
-import 'package:bright_mobile/old_version/screens/details/components/body.dart';
 import 'package:flutter/material.dart';
+import 'components/body.dart';
 
 class DetailScreen extends StatelessWidget {
 
@@ -11,7 +11,7 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
         elevation: 0,

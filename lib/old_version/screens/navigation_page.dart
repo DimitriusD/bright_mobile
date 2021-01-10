@@ -1,9 +1,10 @@
 import 'package:bright_mobile/old_version/screens/profile/user_profile_screen.dart';
+import 'package:bright_mobile/screen/places/places_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'entertainment/entertainment_screen.dart';
 import 'events/events_screen.dart';
-import 'places/places_screen.dart';
+
 
 class NavigationPage extends StatelessWidget {
 

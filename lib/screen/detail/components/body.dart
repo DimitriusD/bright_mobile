@@ -22,26 +22,29 @@ class DetailScreenBody extends StatelessWidget {
             height: size.height,
             child: Stack(
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-                  child: Column(
+                Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                    Container(
+                          child: place.images.isNotEmpty
+                              ? Image.memory(place.images[0])
+                              : Image(image: AssetImage('assets/images/not-found.jpg'))
+                    ),
                       Text(
-                        "Come and Stay",
+                        place.name,
                         style: Theme.of(context)
                             .textTheme
                             .headline4
-                            .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+                            .copyWith(color: Colors.black, fontWeight: FontWeight.bold),
                       ),
-                    Container(
-                          child: Image.asset('assets/images/come.jpg',
-                          fit: BoxFit.fill,)
-                    ),
-                      Text("Кафе Come and Stay находится в центральной части Киева, поэтому здесь всегда много посетителей. Кафе довольно небольшое, при этом оно очень светлое и уютное. Возле барной стойки можно купить не только еду, но и интересные сувениры и открытки. ")
+                      Text(place.location, style: Theme.of(context)
+                          .textTheme
+                          .headline4
+                          .copyWith(color: Colors.black, fontWeight: FontWeight.bold)),
+                      Text(place.description)
                     ],
                   ),
-                )
+
               ],
             )
           )

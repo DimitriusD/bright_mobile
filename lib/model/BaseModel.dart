@@ -11,9 +11,11 @@ class BaseModel{
 
   final String description;
 
+  final String phone;
+
   final List<Uint8List> images;
 
-  BaseModel({this.id, this.name, this.location, this.description, this.images});
+  BaseModel({this.id, this.name, this.location, this.description, this.phone, this.images});
 
 
   static List<Uint8List> imagesConverter(List<dynamic> imageList){
